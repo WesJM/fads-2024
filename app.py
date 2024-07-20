@@ -39,7 +39,9 @@ if st.session_state.view_pets:
     conn = psycopg2.connect(dbname=DB, user=USER, password=PW, host=HOST, port=PORT)
     curs = conn.cursor()
     curs.execute('SELECT * FROM mytable')
+
     test_df = pd.DataFrame(curs.fetchall(), columns=['name', 'pet', 'is_cool'])
+    
     curs.close()
     conn.close()
 
@@ -50,7 +52,8 @@ if st.session_state.view_pets:
         st.session_state.df1 = test_df
 
         st.session_state.edited_df1 = st.session_state.df1.copy()
-
+ 
+ 
     # Convenient shorthand notation
     df1 = st.session_state.df1
 
@@ -67,7 +70,10 @@ if st.session_state.view_pets:
             },
             hide_index=True,
         )
-        return st.session_state.edited_df1
+
+        test_df = st.session_state.edited_df1
+        
+        return test_df
     
     df_update_preds = df_updates()
 
