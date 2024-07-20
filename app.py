@@ -26,14 +26,23 @@ with st.sidebar:
     st.button('View Preds', on_click=click_view_button)
 
 
+
+
 if st.session_state.view_preds:
     ### DATABASE CONNECTION
-    DB = 'compliance_db'
-    USER = 'postgres'
-    PW = 'admin'
-    HOST = 'localhost'
-    PORT = 5432
+    
+    # user=postgres.viwputoyddcvgcvvkfzb
+    # password=[YOUR-PASSWORD]
+    # host=aws-0-us-east-1.pooler.supabase.com
+    # port=6543
+    # dbname=postgres
 
+    USER = 'postgres.viwputoyddcvgcvvkfzb'
+    PW = 'FADSsummer2024!'
+    HOST = 'aws-0-us-east-1.pooler.supabase.com'
+    PORT = 6543
+    DB = 'postgres'
+    
     conn = psycopg2.connect(dbname=DB, user=USER, password=PW, host=HOST, port=PORT)
     curs = conn.cursor()
     curs.execute('SELECT * FROM mytable')
