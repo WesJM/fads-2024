@@ -46,21 +46,21 @@ if st.session_state.view_pets:
     conn.close()
 
     
-    # Initialize session state with dataframes
-    # Include initialization of "edited" slots by copying originals
-    if 'df1' not in st.session_state:
-        st.session_state.df1 = test_df
+    # # Initialize session state with dataframes
+    # # Include initialization of "edited" slots by copying originals
+    # if 'df1' not in st.session_state:
+    #     st.session_state.df1 = test_df
 
-        st.session_state.edited_df1 = st.session_state.df1.copy()
+    #     st.session_state.edited_df1 = st.session_state.df1.copy()
  
- 
-    # Convenient shorthand notation
-    df1 = st.session_state.df1
+
+    # # Convenient shorthand notation
+    # df1 = st.session_state.df1
 
     # Page functions commit edits in real time to "editied" slots in session state
     def df_updates():
         st.session_state.edited_df1 = st.data_editor(
-            df1,
+            test_df,
             column_config = {
                 'is_cool': st.column_config.CheckboxColumn(
                     'is a cool pet',
