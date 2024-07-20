@@ -98,6 +98,8 @@ if st.session_state.view_preds:
         curs = conn.cursor()
         execute_values(curs, sql, rows_to_update)
         curs.close()
+        
+        conn.commit()
         conn.close()
         
         st.success('Record added Successfully')
