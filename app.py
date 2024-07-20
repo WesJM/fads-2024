@@ -5,11 +5,13 @@ Here's our first attempt at using data to create a table:
 
 import streamlit as st
 import pandas as pd
-import numpy as np
-from collections import Counter
+# import numpy as np
+# from collections import Counter
 
-from datetime import datetime
+# from datetime import datetime
+
 import psycopg2
+from psycopg2.extras import execute_values
 
 
 st.write("Finally!! Hello World.")
@@ -77,3 +79,38 @@ if st.session_state.view_preds:
         return st.session_state.edited_df1
     
     df_update_preds = df_updates()
+
+    if 'btn_update_preds' not in st.session_state:
+            st.session_state.btn_update_preds = False
+
+    def click_update_button():
+        st.session_state.btn_update_preds = not st.session_state.btn_update_preds
+
+    st.button('Update data', on_click=click_update_button)
+
+    if st.session_state.btn_update_preds:
+        # The message and nested widget will remain on the page
+        # st.write('Button is on!')
+
+        conn = psycopg2.connect(dbname=DB, user=USER, password=PW, host=HOST, port=PORT)
+        conn.autocommit = True
+        
+        sql = """
+            UPDATE mytable m
+            SET 
+                is_cool = CAST(t.is_cool AS BOOLEAN)
+            FROM (values %s) AS t(name, pet, is_cool)
+            WHERE m.name = t.name;
+        """
+        rows_to_update = list(df_update_preds.itertuples(index=False, name=None))
+
+        curs = conn.cursor()
+        execute_values(curs, sql, rows_to_update)
+        curs.close()
+        conn.close()
+        
+        st.success('Record added Successfully')
+        
+    # else:
+    #     st.write('Button is off!')
+
