@@ -58,9 +58,9 @@ if st.session_state.view_pets:
     # df1 = st.session_state.df1
 
     # Page functions commit edits in real time to "editied" slots in session state
-    def df_updates():
+    def df_updates(df):
         st.session_state.edited_df1 = st.data_editor(
-            test_df,
+            df,
             column_config = {
                 'is_cool': st.column_config.CheckboxColumn(
                     'is a cool pet',
@@ -75,7 +75,8 @@ if st.session_state.view_pets:
         
         return test_df
     
-    df_update_preds = df_updates()
+
+    df_update_preds = df_updates(test_df)
 
     if 'btn_update_preds' not in st.session_state:
             st.session_state.btn_update_preds = False
