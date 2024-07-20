@@ -17,18 +17,18 @@ from psycopg2.extras import execute_values
 st.write("Finally got a databse connection!!")
 
 def click_view_button():
-    st.session_state.view_preds = not st.session_state.view_preds
+    st.session_state.view_pets = not st.session_state.view_pets
 
 with st.sidebar:
     st.write('Click to view database table.')
 
-    if 'view_preds' not in st.session_state:
-        st.session_state.view_preds = False
+    if 'view_pets' not in st.session_state:
+        st.session_state.view_pets = False
 
-    st.button('View Preds', on_click=click_view_button)
+    st.button('View User Pets', on_click=click_view_button)
 
 
-if st.session_state.view_preds:
+if st.session_state.view_pets:
     ### DATABASE CONNECTION
     USER = 'postgres.viwputoyddcvgcvvkfzb'
     PW = 'FADSsummer2024!'
@@ -60,7 +60,7 @@ if st.session_state.view_preds:
             df1,
             column_config = {
                 'is_cool': st.column_config.CheckboxColumn(
-                    'is_cool',
+                    'is a cool pet',
                     help="Select row to reclassify",
                     default=False,
                 )
@@ -98,7 +98,7 @@ if st.session_state.view_preds:
         curs = conn.cursor()
         execute_values(curs, sql, rows_to_update)
         curs.close()
-        
+
         conn.commit()
         conn.close()
         
