@@ -14,7 +14,7 @@ import psycopg2
 from psycopg2.extras import execute_values
 
 
-st.write("Finally!! Hello World.")
+st.write("Finally got a databse connection!!")
 
 def click_view_button():
     st.session_state.view_preds = not st.session_state.view_preds
@@ -28,17 +28,8 @@ with st.sidebar:
     st.button('View Preds', on_click=click_view_button)
 
 
-
-
 if st.session_state.view_preds:
     ### DATABASE CONNECTION
-    
-    # user=postgres.viwputoyddcvgcvvkfzb
-    # password=[YOUR-PASSWORD]
-    # host=aws-0-us-east-1.pooler.supabase.com
-    # port=6543
-    # dbname=postgres
-
     USER = 'postgres.viwputoyddcvgcvvkfzb'
     PW = 'FADSsummer2024!'
     HOST = 'aws-0-us-east-1.pooler.supabase.com'
@@ -111,6 +102,6 @@ if st.session_state.view_preds:
         
         st.success('Record added Successfully')
         
-    # else:
-    #     st.write('Button is off!')
+    else:
+        st.write('Button is off!')
 
