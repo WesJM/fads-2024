@@ -49,3 +49,31 @@ if st.session_state.view_preds:
     test_df = pd.DataFrame(curs.fetchall(), columns=['name', 'pet', 'is_cool'])
     curs.close()
     conn.close()
+
+    
+    # Initialize session state with dataframes
+    # Include initialization of "edited" slots by copying originals
+    if 'df1' not in st.session_state:
+        st.session_state.df1 = test_df
+
+        st.session_state.edited_df1 = st.session_state.df1.copy()
+
+    # Convenient shorthand notation
+    df1 = st.session_state.df1
+
+    # Page functions commit edits in real time to "editied" slots in session state
+    def df_updates():
+        st.session_state.edited_df1 = st.data_editor(
+            df1,
+            column_config = {
+                'is_cool': st.column_config.CheckboxColumn(
+                    'is_cool',
+                    help="Select row to reclassify",
+                    default=False,
+                )
+            },
+            hide_index=True,
+        )
+        return st.session_state.edited_df1
+    
+    df_update_preds = df_updates()
