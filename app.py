@@ -19,7 +19,7 @@ import streamlit as st
 
 from datetime import datetime, timedelta, date
 
-# import nltk
+import nltk
 from nltk.corpus import stopwords
 
 import spacy
