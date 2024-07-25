@@ -41,14 +41,14 @@ st.write("Test")
 # english_stopwords = set(stopwords.words('english'))
 nlp = spacy.load("en_core_web_sm")
 
-# st.set_page_config(
-#     page_title='Complinace Terms App',
-#     layout='wide',
-#     initial_sidebar_state='collapsed',
-#     # menu_items={'Get Help': 'https://www.google.com/',
-#     #             'Report a bug': 'https://www.someresource.com/bug',
-#     #             'About': '# This is a header. This is an *some* app!'}
-# )
+st.set_page_config(
+    page_title='Complinace Terms App',
+    layout='wide',
+    initial_sidebar_state='collapsed',
+    # menu_items={'Get Help': 'https://www.google.com/',
+    #             'Report a bug': 'https://www.someresource.com/bug',
+    #             'About': '# This is a header. This is an *some* app!'}
+)
 
 # def clean_text(doc):
 
