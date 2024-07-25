@@ -24,8 +24,9 @@ from nltk.corpus import stopwords
 
 import spacy
 
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
+import transformers
+# from transformers import AutoTokenizer
+# from transformers import AutoModelForSequenceClassification
 import torch
 
 
