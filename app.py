@@ -8,33 +8,35 @@ from bs4 import BeautifulSoup
 
 from datetime import datetime, timedelta, date
 
-import pandas as pd
-import numpy as np
+# import pandas as pd
+# import numpy as np
 
-import psycopg2
-from psycopg2.extras import execute_values
+# import psycopg2
+# from psycopg2.extras import execute_values
 
 import streamlit as st
-# import altair as alt
+# # import altair as alt
 
-from datetime import datetime, timedelta, date
+# from datetime import datetime, timedelta, date
 
-# import nltk
-from nltk.corpus import stopwords
+# # import nltk
+# from nltk.corpus import stopwords
 
-import spacy
+# import spacy
 
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
-import torch
+# from transformers import AutoTokenizer
+# from transformers import AutoModelForSequenceClassification
+# import torch
 
 
-### DATABASE CONNECTION
-USER = 'postgres.viwputoyddcvgcvvkfzb'
-PW = 'FADSsummer2024!'
-HOST = 'aws-0-us-east-1.pooler.supabase.com'
-PORT = 6543
-DB = 'postgres'
+# ### DATABASE CONNECTION
+# USER = 'postgres.viwputoyddcvgcvvkfzb'
+# PW = 'FADSsummer2024!'
+# HOST = 'aws-0-us-east-1.pooler.supabase.com'
+# PORT = 6543
+# DB = 'postgres'
+
+st.write("Test")
 
 # english_stopwords = set(stopwords.words('english'))
 # nlp = spacy.load("en_core_web_sm")
