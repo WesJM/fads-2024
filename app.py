@@ -17,12 +17,12 @@ from datetime import datetime, timedelta, date
 import streamlit as st
 # # import altair as alt
 
-# from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta, date
 
-# # import nltk
-# from nltk.corpus import stopwords
+# import nltk
+from nltk.corpus import stopwords
 
-# import spacy
+import spacy
 
 # from transformers import AutoTokenizer
 # from transformers import AutoModelForSequenceClassification
@@ -39,7 +39,7 @@ import streamlit as st
 st.write("Test")
 
 # english_stopwords = set(stopwords.words('english'))
-# nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 # st.set_page_config(
 #     page_title='Complinace Terms App',
