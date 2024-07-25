@@ -8,11 +8,11 @@ from bs4 import BeautifulSoup
 
 from datetime import datetime, timedelta, date
 
-# import pandas as pd
-# import numpy as np
+import pandas as pd
+import numpy as np
 
-# import psycopg2
-# from psycopg2.extras import execute_values
+import psycopg2
+from psycopg2.extras import execute_values
 
 import streamlit as st
 # # import altair as alt
@@ -20,7 +20,7 @@ import streamlit as st
 from datetime import datetime, timedelta, date
 
 # import nltk
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 
 import spacy
 
