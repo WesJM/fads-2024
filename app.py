@@ -22,7 +22,7 @@ from datetime import datetime, timedelta, date
 # import nltk
 # from nltk.corpus import stopwords
 
-import spacy
+# import spacy
 
 import transformers
 # from transformers import AutoTokenizer
@@ -40,7 +40,7 @@ import torch
 st.write("Test")
 
 # english_stopwords = set(stopwords.words('english'))
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
 
 st.set_page_config(
     page_title='Complinace Terms App',
