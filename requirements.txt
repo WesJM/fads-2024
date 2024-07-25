@@ -5,4 +5,3 @@ psycopg2_binary==2.9.9
 Requests==2.32.3
 streamlit==1.36.0
 torch==2.3.0
-transformers==4.40.2
