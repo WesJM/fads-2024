@@ -30,10 +30,10 @@ import torch
 
 
 ### DATABASE CONNECTION
-USER = 'postgres.viwputoyddcvgcvvkfzb'
-PW = 'FADSsummer2024!'
+USER = 'postgres.vi--------'
+PW = 'xxxxxxxx'
 HOST = 'aws-0-us-east-1.pooler.supabase.com'
-PORT = 6543
+PORT = xxxx
 DB = 'postgres'
 
 english_stopwords = set(stopwords.words('english'))
