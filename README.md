@@ -11,9 +11,3 @@ Corporate compliance risk Faculty Assisted Data Science (FADS) project at Indian
 - **Frameworks:** Streamlit
 - **Database:** PostgreSQL
 - **Cloud Services:** AWS S3
-
-## 📥 Installation
-
-Clone the repository:
-```bash
-git clone https://github.com/WesJM/fads-2024.git
